@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<% if notice %>
+	<div id="notice_wrapper">
+		<p class="notice"><%= notice %></p>
+	</div>
+<% elsif alert %>
+	<div id="notice_wrapper">
+		<p class="alert"><%= alert %></p>
+	</div>
+<% end %>
+
 <% Sxoleio.all.each do |sxoleio| %>
   <%= link_to sxoleio.name, secrets_path(sxoleio: sxoleio.name), class: "btn btn-sm btn-default" %>
 <% end %>

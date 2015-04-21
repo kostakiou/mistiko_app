@@ -21,7 +21,7 @@ class SecretsController < ApplicationController
 		@secret = Secret.new(secrets_params)
 
 		if @secret.save
-			redirect_to @secret
+			redirect_to @secret, notice: "Succesfully created new Secret"
 		else
 			render "New"
 		end
@@ -33,7 +33,7 @@ class SecretsController < ApplicationController
 
 	def update
 		if @secret.update(secrets_params)
-			redirect_to @secret
+			redirect_to @secret, notice: "Secret was succesfully updated!"
 		else
 			render "Edit"
 		end
