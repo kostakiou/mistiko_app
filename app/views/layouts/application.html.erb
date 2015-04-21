@@ -8,6 +8,21 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <%= link_to "New Pin", new_secret_path %>
+    </li>
+    <li>
+      <%= link_to "Account", edit_user_registration_path %>
+    </li>
+    <li>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    </li>
+  </ul>
+<% end %>
+
+
 <% if notice %>
 	<div id="notice_wrapper">
 		<p class="notice"><%= notice %></p>
