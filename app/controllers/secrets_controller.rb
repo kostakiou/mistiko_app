@@ -1,8 +1,13 @@
 class SecretsController < ApplicationController
 	before_action :find_secret, only: [:show, :edit, :update, :destroy]
 
-	def index	
-		@secrets = Secret.all.order("created_at DESC")
+	def index
+		if params[:sxoleio].blank?
+			@secrets = Secret.all.order("created_at DESC")
+		else
+			@sxoleio_id = Sxoleio.find_by(name: params[:sxoleio]).id
+			@secrets = Secret.where(sxoleio_id: @sxoleio_id).order("created_at DESC")
+		end
 	end
 
 	def show		
@@ -42,7 +47,7 @@ class SecretsController < ApplicationController
 	private
 
 	def secrets_params
-		params.require(:secret).permit(:title, :description)
+		params.require(:secret).permit(:title, :description, :sxoleio_id)
 	end
 
 	def find_secret

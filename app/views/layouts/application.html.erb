@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mistiko</title>
+  <title>Mistiko App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% Sxoleio.all.each do |sxoleio| %>
+  <%= link_to sxoleio.name, secrets_path(sxoleio: sxoleio.name), class: "btn btn-sm btn-default" %>
+<% end %>
 
 <%= yield %>
 
