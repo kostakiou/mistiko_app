@@ -3,10 +3,10 @@ class SecretsController < ApplicationController
 
 	def index
 		if params[:sxoleio].blank?
-			@secrets = Secret.all.order("created_at DESC").paginate(page: params[:page], per_page: 7)
+			@secrets = Secret.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
 		else
 			@sxoleio_id = Sxoleio.find_by(name: params[:sxoleio]).id
-			@secrets = Secret.where(sxoleio_id: @sxoleio_id).order("created_at DESC")
+			@secrets = Secret.where(sxoleio_id: @sxoleio_id).order("created_at DESC").paginate(page: params[:page], per_page: 4)
 		end
 	end
 
@@ -21,7 +21,7 @@ class SecretsController < ApplicationController
 		@secret = Secret.new(secrets_params)
 
 		if @secret.save
-			redirect_to @secret, notice: "Succesfully created new Secret"
+			redirect_to root_path, notice: "Succesfully created new Secret"
 		else
 			render "New"
 		end
