@@ -85,6 +85,10 @@ a {
 .change-bg{
 	background-color: #171B24;
 }
+.logo{
+	height: 65px;
+	width: auto;
+}
 .navbar{
 	border-radius: 0;
 }
@@ -164,11 +168,13 @@ a {
 }
 /*Header*/
 header{
-	min-height: 450px;
+	min-height: 250px;
 	text-align: center;
 	background-color: #171B24;
 }
 header h2{
+	margin-top: 90px;
+	/*line-height: 250px;*/
 	font-size: 45px;
 	color: #79F7FD;
 	font-family: 'Oswald', sans-serif;
