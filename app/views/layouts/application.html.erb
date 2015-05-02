@@ -8,20 +8,21 @@
 </head>
 <body>
 <%= render 'layouts/nav' %>
- 
-
-<% if notice %>
-	<div id="notice_wrapper">
-		<p class="notice"><%= notice %></p>
-	</div>
-<% elsif alert %>
-	<div id="notice_wrapper">
-		<p class="alert"><%= alert %></p>
-	</div>
-<% end %>
-
 
     <%= yield %>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; mistiko.gr 2015
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> 
 
 </body>
 </html>
