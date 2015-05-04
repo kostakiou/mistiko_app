@@ -15,6 +15,12 @@ class SecretsController < ApplicationController
 
 	def new
 		@secret = Secret.new
+		if params[:sxoleio].blank?
+			@secrets = Secret.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
+		else
+			@sxoleio_id = Sxoleio.find_by(name: params[:sxoleio]).id
+			@secrets = Secret.where(sxoleio_id: @sxoleio_id).order("created_at DESC").paginate(page: params[:page], per_page: 4)
+		end
 	end
 
 	def create
@@ -23,7 +29,7 @@ class SecretsController < ApplicationController
 		if @secret.save
 			redirect_to root_path, notice: "Succesfully created new Secret"
 		else
-			render "New"
+			redirect_to root_path, notice: "Megisto 1000 chars"
 		end
 
 	end
@@ -47,7 +53,7 @@ class SecretsController < ApplicationController
 	private
 
 	def secrets_params
-		params.require(:secret).permit(:title, :description, :sxoleio_id)
+		params.require(:secret).permit(:title, :sxoleio_id)
 	end
 
 	def find_secret
