@@ -86,7 +86,7 @@ a {
 	background-color: #171B24;
 }
 .logo{
-	height: 65px;
+	height: 50px;
 	width: auto;
 }
 .navbar{
@@ -97,7 +97,7 @@ a {
 }
 .navbar a img{
 	margin-top: -10px;
-	margin-left: 180px;
+	margin-left: 100px;
 }
 .navbar-nav li a{
 	font-family: 'Open Sans', sans-serif;
