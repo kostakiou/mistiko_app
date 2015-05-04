@@ -29,7 +29,7 @@ class SecretsController < ApplicationController
 		if @secret.save
 			redirect_to root_path, notice: "Succesfully created new Secret"
 		else
-			redirect_to root_path, notice: "Megisto 80 chars"
+			redirect_to root_path, notice: "Megisto 1000 chars"
 		end
 
 	end
