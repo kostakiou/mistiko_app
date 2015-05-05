@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sxolio:</strong>
+  <%= @comment.sxolio %>
+</p>
+
+<p>
+  <strong>Secret:</strong>
+  <%= @comment.secret_id %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

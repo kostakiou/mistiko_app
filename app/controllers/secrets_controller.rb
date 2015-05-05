@@ -58,6 +58,8 @@ class SecretsController < ApplicationController
 
 	def find_secret
 		@secret = Secret.find(params[:id])
+		@comments = @secret.comments.all
+		@comment = @secret.comments.build
 	end
 
 end
