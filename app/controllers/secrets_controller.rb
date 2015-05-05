@@ -53,7 +53,7 @@ class SecretsController < ApplicationController
 	private
 
 	def secrets_params
-		params.require(:secret).permit(:title, :sxoleio_id)
+		params.require(:secret).permit(:title, :sxoleio_id, :description)
 	end
 
 	def find_secret
