@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   	put 'users' => 'devise/registrations#update', :as => 'user_registration'
 	end
   resources :secrets
+
+  resources :posts
+  
   root 'secrets#new'
 end
