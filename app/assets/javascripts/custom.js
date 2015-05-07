@@ -1,3 +1,5 @@
+$(document).ready(function() { $("#tmimata").select2(); });
+
 
 // SLIDES
 // $(function() {

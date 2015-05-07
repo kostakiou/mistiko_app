@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require select2
+ *= require select2-bootstrap
  */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans|Oswald|Raleway:100,900); 
 @import "bootstrap-sprockets";
