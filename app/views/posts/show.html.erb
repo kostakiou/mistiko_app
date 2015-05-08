@@ -1,18 +1,25 @@
-<h1 class="title">
-	<%= @post.title %>
-</h1>
+<section id="post_show">
+	<div class="container">
+		<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+		<div class="post_wrapper">
+			<h2 class="title text-center">
+				<%= @post.title %>
+			</h2>
 
-<p class="body">
-	<%= @post.body %>
-</p>
- 
-<p class="date">
-    Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-	<% if user_signed_in? %>
-    | <%= link_to 'Edit', edit_post_path(@post) %> |
-      <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-  </p>
-
- 
-
+			<div class="body">
+				<p><%= @post.body %></p>
+			 
+			<p class="date text-muted">
+			    Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+				<% if user_signed_in? %>
+			    | <%= link_to 'Edit', edit_post_path(@post) %> |
+			      <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+			<% end %>
+			</p>
+			</div>
+		</div><!-- .post_wrapper -->
+		</div><!-- .col -->
+		</div><!-- .row -->
+	</div>
+ </section>
